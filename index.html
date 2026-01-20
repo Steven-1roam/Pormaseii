@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rekomendasi Porsi Makan Seimbang</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Rekomendasi Porsi Makan Seimbang</h1>
+    <p>Membantu pengguna menentukan porsi makan sehat</p>
+  </header>
+
+  <main class="container">
+    <label>Usia (tahun)</label>
+    <input type="number" id="age">
+
+    <label>Jenis Kelamin</label>
+    <select id="gender">
+      <option value="">-- Pilih --</option>
+      <option value="male">Laki-laki</option>
+      <option value="female">Perempuan</option>
+    </select>
+
+    <label>Tingkat Aktivitas</label>
+    <select id="activity">
+      <option value="">-- Pilih --</option>
+      <option value="low">Rendah</option>
+      <option value="medium">Sedang</option>
+      <option value="high">Tinggi</option>
+    </select>
+
+    <button onclick="hitungPorsi()">Rekomendasikan</button>
+
+    <div class="result" id="result">
+      <h3>Hasil Rekomendasi</h3>
+      <p id="kalori"></p>
+      <ul id="porsi"></ul>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 | Edukasi Gizi Seimbang
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
