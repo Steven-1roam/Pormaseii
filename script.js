@@ -22,13 +22,51 @@ function hitungPorsi() {
   document.getElementById("kalori").innerText =
     "Perkiraan kebutuhan energi: " + kalori + " kkal/hari";
 
+  // Persentase gizi (berubah sesuai kalori)
+  let karbo, protein, lemak;
+
+  if (kalori <= 2000) {
+    karbo = "50%";
+    protein = "20%";
+    lemak = "30%";
+  } else if (kalori <= 2400) {
+    karbo = "55%";
+    protein = "20%";
+    lemak = "25%";
+  } else {
+    karbo = "60%";
+    protein = "20%";
+    lemak = "20%";
+  }
+
   const porsi = document.getElementById("porsi");
   porsi.innerHTML = `
-    <li>Karbohidrat: 45–65% (nasi, roti, kentang)</li>
-    <li>Protein: 15–25% (ikan, telur, tahu, tempe)</li>
-    <li>Lemak sehat: 20–30% (kacang, alpukat)</li>
-    <li>Sayur & buah: minimal 5 porsi per hari</li>
+    <li>
+      <b>Karbohidrat: ${karbo}</b>
+      <br>• Nasi: 1 porsi = ±100 gram (±175 kkal)
+      <br>• Roti: 1 porsi = 1 lembar
+      <br>• Kentang: 1 porsi = 1 buah sedang
+    </li>
+    <li>
+      <b>Protein: ${protein}</b>
+      <br>• Telur: 1 butir
+      <br>• Ikan: ±75 gram
+      <br>• Tahu/Tempe: 1 potong sedang
+    </li>
+    <li>
+      <b>Lemak Sehat: ${lemak}</b>
+      <br>• Minyak: 1 sdt
+      <br>• Kacang: segenggam kecil
+      <br>• Alpukat: ½ buah
+    </li>
+    <li>
+      <b>Sayur & Buah</b>
+      <br>• Sayur: 1 mangkuk
+      <br>• Buah: 1 buah sedang
+      <br>• Minimal 5 porsi per hari
+    </li>
   `;
 
   document.getElementById("result").style.display = "block";
 }
+
